@@ -10,10 +10,10 @@ stds_below_mean = 0.6
 
 # Artists to output
 all_artists = True
-artists_output = ['Beatles','Rolling Stones','Beach Boys','Led Zeppelin','Prince','Bad Company','Sault','Black Sabbath','Kiss']
+artists_output = ['Beatles','Rolling Stones','Beach Boys','Led Zeppelin','Prince','Bad Company','Sault','Black Sabbath','Kiss','Elton John']
 
 # Files
-write_files = True
+write_files = False
 
 artists_output_str = ''
 if all_artists == False:

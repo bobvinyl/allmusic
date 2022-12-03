@@ -1,0 +1,7 @@
+# Ignore contents of data directories
+core_disco/**
+discographies/**
+input/**
+master_disco/**
+reports/**
+stats/**
