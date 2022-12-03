@@ -10,3 +10,6 @@ Import the allmusic_disco_scraper class into your script.  Call the disco_to_dat
   * AllMusic Rating
   * User Rating
   * User Count
+
+## disco-driver.py
+This script is an example using the allmusic_disco_scraper class.  Create a dictionary of artists and their urls and the code loops through, screen scraping the data from allmusic.com and storing it in .csv files (one per artist).
