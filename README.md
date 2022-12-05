@@ -9,17 +9,17 @@ Import the allmusic_disco_scraper class into your script.  Call the disco_to_dat
   > * Returns:
   >> DataFrame:
   >> * Artist
-   *** Year
-   *** Album
-   *** Label
-   *** AllMusic Rating
-   *** User Rating
-   *** User Count
+  >> * Year
+  >> * Album
+  >> * Label
+  >> * AllMusic Rating
+  >> * User Rating
+  >> * User Count
  * get_artist_url
-  ** Arguments: artist (string)
-  ** Returns:
-   *** artist (pulled form allmusic rather than the artist name as passed as an arg)
-   *** url
+  > * Arguments: artist (string)
+  > * Returns:
+  >> * artist (pulled form allmusic rather than the artist name as passed as an arg)
+  >> * url
 
 ## disco_driver.py
 This script is an example using the allmusic_disco_scraper class's disco_to_dataframe method.  Create a dictionary of artists and their urls and the code loops through, screen scraping the data from allmusic.com and storing it in .csv files (one per artist).
