@@ -11,11 +11,10 @@ class allmusic_disco_scraper:
     options.headless = True
     options.add_argument("--window-size=640,480")
 
-    driver_path = '../chrome/chromedriver.exe'
     driver = None
     
-    def __init__(self):
-        self.driver = webdriver.Chrome(executable_path=self.driver_path)
+    def __init__(self, driver_path):
+        self.driver = webdriver.Chrome(executable_path=driver_path)
         
     def __del__(self):
         self.driver.quit()
@@ -53,3 +52,16 @@ class allmusic_disco_scraper:
         df = df.loc[:,['Artist','Year','Album','Label','AllMusic Rating','User Rating','User Count']]
         
         return df
+    
+    def get_artist_url(self,artist):
+        lookup_url = f'https://www.allmusic.com/search/artists/{artist}'
+        self.driver.get(lookup_url)
+        html = self.driver.page_source
+        
+        # Parse url via BS4
+        soup = BeautifulSoup(html, "html.parser")
+        artist_tag = soup.find('li', {'class': 'artist'}).find('div', {'class': 'name'}).find('a')
+        artist = artist_tag.text
+        url = artist_tag.attrs['href']
+        
+        return artist, url
